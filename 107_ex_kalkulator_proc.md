@@ -55,16 +55,28 @@ izvještavanje su neke zadaće koje će nam često biti svrsishodne.
 :::
 
 Ipak program je pogrešan. Pogledajmo rezultat ovog programa:
+``` python
+prvi_broj = float(input("Unesi prvi broj: "))
 
-::: pythonp
-[\[listing:calc_naive\]](#listing:calc_naive){reference-type="ref"
-reference="listing:calc_naive"} Unesi prvi broj: 1 Odaberi operator
-(+,-): + Unesi drugi broj: 1
+operator = input("Odaberi operator (+, -): ")
 
+drugi_broj = float(input("Unesi drugi broj: "))
+
+if operator == "+":
+    rezultat = prvi_broj + drugi_broj
+elif operator == "-":
+    rezultat = prvi_broj - drugi_broj
+else:
+    rezultat = "Nevažeći operator"
+
+print(f"Rezultat: {rezultat}")
+```
+Rezultat
+```
 Rezultat je: 11
 
 Program je završio s radom, pritisni \<enter\> za kraj.
-:::
+```
 
 Kao što vidimo, rezultat izračuna `1 + 1`{.python} je prema našem
 programu `11`{.python}. U čemu je problem? Greškom smo napravili program
