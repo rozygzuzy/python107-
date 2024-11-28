@@ -191,13 +191,33 @@ to kada program nije dobio validne ulaze i ne bi imalo smisla
 nastavljati s radom. Primjer možemo vidjeti u akciji na sljedećem
 ispisu:
 
-::: pythonp
-[\[listing:calc_try\]](#listing:calc_try){reference-type="ref"
-reference="listing:calc_try"} Unesi prvi broj: 3.14 Odaberi operator
-(+,-): + Unesi drugi broj: neću!
+``` pythonp
+# [listing:calc_try] {reference-type="ref" reference="listing:calc_try"}
 
+try:
+    # Unos korisnika
+    first_number = float(input("Unesi prvi broj: "))  # unos prvog broja
+    operator = input("Odaberi operator (+,-): ")      # unos operatora
+    second_number = float(input("Unesi drugi broj: ")) # unos drugog broja
+
+    # Izvršenje operacije na osnovu unesenog operatora
+    if operator == "+":
+        result = first_number + second_number
+    elif operator == "-":
+        result = first_number - second_number
+    else:
+        result = "Nepoznat operator"
+
+    # Prikaz rezultata
+    print("Rezultat:", result)
+
+except ValueError:
+    print("Greška: Uneseni podaci nisu validni brojevi. Molimo unesite brojeve.")
+```
+
+```
 GREŠKA: Oblik broja nije prepoznat! Program završava s radom.
-:::
+```
 
 Kao što vidimo, program se sada ne ruši kad korisnik upiše pogrešan
 oblik broja i to čak ni kada korisnik prgavo (kakvi korisnici i jesu)
