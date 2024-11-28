@@ -28,9 +28,14 @@ vrijednosti[^1]. Pokušajte napisati ovaj program prije no što nastavite
 čitati skriptu!
 
 Vrlo jednostavnu, dobro komentiranu i pogrešnu implementaciju ovog
-programa vidimo na primjeru
-[\[listing:calc_naive\]](#listing:calc_naive){reference-type="ref"
-reference="listing:calc_naive"}.
+programa vidimo na primjeru:
+
+```pyhton
+def calc_naive():
+    print("This is calc_naive function")
+
+calc_naive()
+```
 
 Program smo podijelili u tri sekcije: unos ulaznih podataka, izračun i
 ispis rezultata.
@@ -103,7 +108,9 @@ računa s brojevima. S tekstom još nismo detaljno radili, ali ovaj
 primjer može poslužiti kao uvod. Iskoristiti ćemo metodu
 `str.split`{.python} kako bismo maknuli \"prazan prostor\" koji prethodi
 ili dolazi nakon operatora. Time ćemo pripremiti ulazne vrijednosti za
-daljnji rad. Dorađeni program je vidljiv na primjeru
+daljnji rad. Dorađeni program je vidljiv na primjeru:
+
+```pyhton
 [\[listing:calc_types\]](#listing:calc_types){reference-type="ref"
 reference="listing:calc_types"}
 
