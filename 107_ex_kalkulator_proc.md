@@ -215,42 +215,42 @@ Naš kalkulator je još uvijek vrlo primitivan, zna samo zbrajati i
 oduzimati, ali demonstrira nam mnoge različite koncepte u programiranju.
 Omogućava ponovljene radnje i otporan je na najčešće korisničke greške.
 Korištenje programa sada izgleda ovako:
+``` python
+while True:
+    print("----------")
+    operator = input('Odaberi operator (+,-) ili unesi "i" za izlaz: ').strip().lower()
 
-::: pythonp
-[\[listing:calc_while\]](#listing:calc_while){reference-type="ref"
-reference="listing:calc_while"} ----------
+    if operator == "i":
+        print("---------- Program je završio s radom, pritisni <enter> za kraj.")
+        break
 
-Odaberi operator (+,-) ili unesi \"i\" za izlaz: + Unesi prvi broj: 3.14
-Unesi drugi broj: 25
+    if operator not in ['+', '-']:
+        print("GREŠKA: Odabrana je nepoznata operacija, pokušaj ponovo!")
+        continue
 
-Rezultat je: 28.14
+    prvi_broj = input("Unesi prvi broj: ").strip()
+    try:
+        prvi_broj = float(prvi_broj)
+    except ValueError:
+        print("GREŠKA: Oblik broja nije prepoznat! Pokušaj ponovo.")
+        continue
 
-----------
+    drugi_broj = input("Unesi drugi broj: ").strip()
+    try:
+        drugi_broj = float(drugi_broj)
+    except ValueError:
+        print("GREŠKA: Oblik broja nije prepoznat! Pokušaj ponovo.")
+        continue
 
-Odaberi operator (+,-) ili unesi \"i\" za izlaz: - Unesi prvi broj: 2
-Unesi drugi broj: 7
+    if operator == "+":
+        rezultat = prvi_broj + drugi_broj
+    elif operator == "-":
+        rezultat = prvi_broj - drugi_broj
 
-Rezultat je: -5.0
+    print(f"Rezultat je: {rezultat}")
 
-----------
-
-Odaberi operator (+,-) ili unesi \"i\" za izlaz: x
-
-GREŠKA: Odabrana je nepoznata operacija, pokušaj ponovo!
-
-----------
-
-Odaberi operator (+,-) ili unesi \"i\" za izlaz: + Unesi prvi broj: 42
-Unesi drugi broj: neću
-
-GREŠKA: Oblik broja nije prepoznat! Pokušaj ponovo.
-
-----------
-
-Odaberi operator (+,-) ili unesi \"i\" za izlaz: I
-
----------- Program je završio s radom, pritisni \<enter\> za kraj.
-:::
+```
+    
 
 Ipak, program je prebanalan kako bi bio od koristi kao stvaran
 kalkulator. Recimo da želimo zadovoljiti još barem dvije mogućnosti:
