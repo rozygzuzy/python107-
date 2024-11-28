@@ -4,7 +4,7 @@ Probajmo iskoristiti koncepte i mehanizme koje smo do sada upoznali kako
 bi isprogramirali jednostavan kalkulator. Krenimo s jasnim nabrajanjem
 što taj program treba raditi i koji ulazni podaci su mu za to potrebni.
 
-::: important
+'''important
 Planiranje programa Program valja prvo dobro isplanirati pa tek zatim
 implementirati. Dobra praksa je krenuti od rješavanja najjednostavnijeg
 mogućeg slučaja kao prototipa pa zatim razmisliti o nadogradnji
