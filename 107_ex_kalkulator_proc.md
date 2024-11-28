@@ -30,11 +30,32 @@ vrijednosti[^1]. Pokušajte napisati ovaj program prije no što nastavite
 Vrlo jednostavnu, dobro komentiranu i pogrešnu implementaciju ovog
 programa vidimo na primjeru:
 
-```pyhton
-def calc_naive():
-    print("This is calc_naive function")
+```python
+# 1. UNOS ULAZNIH PODATAKA
+# ------------------------
+# pitaj korisnika za odabir operacije i unos potrebnih brojeva
+n1 = float(input('Unesi prvi broj: '))
+operation = input('Odaberi operator (+,-): ')
+n2 = float(input('Unesi drugi broj: '))
 
-calc_naive()
+# 2. IZRAČUN
+# ----------
+# pronađi rezultat ovisno o odabiru operacije
+if operation == '+':
+    result = n1 + n2
+elif operation == '-':
+    result = n1 - n2
+else:
+    result = None
+    print('GREŠKA: nepoznata operacija!')
+
+# 3. ISPIS REZULTATA
+# ------------------
+print()  # ispiši prazan redak
+print('Rezultat je: ', result)
+print()
+
+input('Program je završio s radom, pritisni <enter> za kraj.')
 ```
 
 Program smo podijelili u tri sekcije: unos ulaznih podataka, izračun i
