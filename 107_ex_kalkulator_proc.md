@@ -111,21 +111,26 @@ ili dolazi nakon operatora. Time ćemo pripremiti ulazne vrijednosti za
 daljnji rad. Dorađeni program je vidljiv na primjeru:
 
 ```pyhton
-[\[listing:calc_types\]](#listing:calc_types){reference-type="ref"
-reference="listing:calc_types"}
-
 Sada program provodi aritmetičke operacije s brojevima i ignorira prazan
 prostor oko operatora. Rezultat je sljedeći:
 
-::: pythonp
-[\[listing:calc_types\]](#listing:calc_types){reference-type="ref"
-reference="listing:calc_types"} Unesi prvi broj: 3.14 Odaberi operator
-(+,-): + Unesi drugi broj: 25
+first_number = float(input("Unesi prvi broj: "))  # unos prvog broja
+operator = input("Odaberi operator (+,-): ")      # unos operatora
+second_number = float(input("Unesi drugi broj: ")) # unos drugog broja
 
+if operator == "+":
+    result = first_number + second_number
+elif operator == "-":
+    result = first_number - second_number
+else:
+    result = "Nepoznat operator"
+print("Rezultat:", result)
+```
+```
 Rezultat je: 28.14
 
 Program je završio s radom, pritisni \<enter\> za kraj.
-:::
+```
 
 Nakon zaprimanja i pripreme korisničkog unosa, program provodi same
 izračune. Ova komponenta zapravo obavlja glavnu radnju cijelog programa.
